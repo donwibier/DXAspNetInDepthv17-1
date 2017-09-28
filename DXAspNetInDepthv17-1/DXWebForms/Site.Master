@@ -1,0 +1,55 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="DXWebForms.Site" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8">
+    <title>Your page title here :)</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <div class="container">
+            <div class="row">
+                <div class="twelve columns">
+                    <p><strong>My DX little sample App</strong></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="twelve columns">
+                    <dx:ASPxMenu ID="ASPxMenu1" runat="server" EnableAdaptivity="True" ItemAutoWidth="False" ItemWrap="False" Width="100%">
+                        <Items>
+                            <dx:MenuItem Text="Item A">
+                            </dx:MenuItem>
+                            <dx:MenuItem Text="Item B">
+                            </dx:MenuItem>
+                            <dx:MenuItem Text="Item C">
+                            </dx:MenuItem>
+                            <dx:MenuItem Text="Item D">
+                            </dx:MenuItem>
+                            <dx:MenuItem Text="Item E">
+                            </dx:MenuItem>
+                            <dx:MenuItem Text="Item F">
+                            </dx:MenuItem>
+                        </Items>
+                    </dx:ASPxMenu>
+                </div>
+            </div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                
+            </asp:ContentPlaceHolder>
+        </div>
+
+    </form>
+</body>
+</html>
