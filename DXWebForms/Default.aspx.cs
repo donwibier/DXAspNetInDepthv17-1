@@ -9,20 +9,8 @@ using DevExpress.Xpo;
 
 namespace DXWebForms
 {
-	public partial class Default : System.Web.UI.Page
+	public partial class Default : XpoWebPage
 	{
-		private Session _sess = null;
-		protected Session XpoSession
-		{
-			get
-			{
-				if (_sess == null)
-					_sess = AppDataContext.GetSession(true);
-				return _sess;
-			}
-		}
-		
-
 		protected void Page_Load(object sender, EventArgs e)
 		{
 		}
@@ -34,17 +22,17 @@ namespace DXWebForms
 
 		protected void grid_RowDeleted(object sender, DevExpress.Web.Data.ASPxDataDeletedEventArgs e)
 		{
-			AppDataContext.Commit(_sess);
+			XpoCommit(this.XpoSession);
 		}
 
 		protected void grid_RowInserted(object sender, DevExpress.Web.Data.ASPxDataInsertedEventArgs e)
 		{
-			AppDataContext.Commit(_sess);
+			XpoCommit(this.XpoSession);
 		}
 
 		protected void grid_RowUpdated(object sender, DevExpress.Web.Data.ASPxDataUpdatedEventArgs e)
 		{
-			AppDataContext.Commit(_sess);
+			XpoCommit(this.XpoSession);
 		}
 	}
 }

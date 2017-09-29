@@ -9,7 +9,7 @@
         <div class="twelve columns">
             <h4>Orders</h4>
             <div>
-				<dx:XpoDataSource ID="xpInvoices" runat="server" OnInit="xpDatasource_Init" TypeName="DXData.Chinook.XPOInvoice"></dx:XpoDataSource>
+				<dx:XpoDataSource ID="xpInvoices" runat="server" OnInit="xpDatasource_Init" TypeName="DXData.Chinook.XPOInvoice" ServerMode="True"></dx:XpoDataSource>
 				<dx:XpoDataSource ID="xpCustomer" runat="server" OnInit="xpDatasource_Init" TypeName="DXData.Chinook.XPOCustomer"></dx:XpoDataSource>
 				<dx:ASPxGridView ID="gridTracks" runat="server" DataSourceID="xpInvoices" AutoGenerateColumns="False" Width="100%" 
 					KeyFieldName="InvoiceId" 

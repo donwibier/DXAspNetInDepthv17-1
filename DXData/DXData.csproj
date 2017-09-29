@@ -46,6 +46,10 @@
     <Compile Include="CinookModelCode\XPOAlbum.Designer.cs">
       <DependentUpon>XPOAlbum.cs</DependentUpon>
     </Compile>
+    <Compile Include="CinookModelCode\XPOAppointment.cs" />
+    <Compile Include="CinookModelCode\XPOAppointment.Designer.cs">
+      <DependentUpon>XPOAppointment.cs</DependentUpon>
+    </Compile>
     <Compile Include="CinookModelCode\XPOArtist.cs" />
     <Compile Include="CinookModelCode\XPOArtist.Designer.cs">
       <DependentUpon>XPOArtist.cs</DependentUpon>
@@ -81,6 +85,10 @@
     <Compile Include="CinookModelCode\XPOPlaylistTrack.cs" />
     <Compile Include="CinookModelCode\XPOPlaylistTrack.Designer.cs">
       <DependentUpon>XPOPlaylistTrack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CinookModelCode\XPOResource.cs" />
+    <Compile Include="CinookModelCode\XPOResource.Designer.cs">
+      <DependentUpon>XPOResource.cs</DependentUpon>
     </Compile>
     <Compile Include="CinookModelCode\XPOTrack.cs" />
     <Compile Include="CinookModelCode\XPOTrack.Designer.cs">

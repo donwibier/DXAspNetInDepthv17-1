@@ -68,21 +68,34 @@ namespace DXWebForms.Code
 		}
 	}
 
-	public static class XpoExtensions
+	public class XpoWebPage : System.Web.UI.Page
 	{
-		public static Session XpoSession(this TemplateControl handler, bool transactional = false)
+		private Session _sess = null;
+
+		/// <summary>Initializes a new instance of the <see cref="XpoWebPage" /> class.</summary>
+		public XpoWebPage()
 		{
-			return AppDataContext.GetSession(transactional);
+
+		}
+		protected Session XpoSession
+		{
+			get
+			{
+				if (_sess == null)
+					_sess = AppDataContext.GetSession(true);
+				return _sess;
+			}
 		}
 
-		public static void XpoCommit(this TemplateControl handler, object obj)
+		public void XpoCommit(object obj)
 		{
 			AppDataContext.Commit(obj);
 		}
 
-		public static void XpoRollback(this TemplateControl handler, object obj)
+		public void XpoRollback(object obj)
 		{
 			AppDataContext.Rollback(obj);
 		}
+
 	}
 }
