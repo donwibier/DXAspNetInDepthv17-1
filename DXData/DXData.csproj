@@ -30,6 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,7 +42,57 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CinookModelCode\XPOAlbum.cs" />
+    <Compile Include="CinookModelCode\XPOAlbum.Designer.cs">
+      <DependentUpon>XPOAlbum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CinookModelCode\XPOArtist.cs" />
+    <Compile Include="CinookModelCode\XPOArtist.Designer.cs">
+      <DependentUpon>XPOArtist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CinookModelCode\XPOCustomer.cs" />
+    <Compile Include="CinookModelCode\XPOCustomer.Designer.cs">
+      <DependentUpon>XPOCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CinookModelCode\XPOEmployee.cs" />
+    <Compile Include="CinookModelCode\XPOEmployee.Designer.cs">
+      <DependentUpon>XPOEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CinookModelCode\XPOGenre.cs" />
+    <Compile Include="CinookModelCode\XPOGenre.Designer.cs">
+      <DependentUpon>XPOGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CinookModelCode\XPOInvoice.cs" />
+    <Compile Include="CinookModelCode\XPOInvoice.Designer.cs">
+      <DependentUpon>XPOInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CinookModelCode\XPOInvoiceLine.cs" />
+    <Compile Include="CinookModelCode\XPOInvoiceLine.Designer.cs">
+      <DependentUpon>XPOInvoiceLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CinookModelCode\XPOMediaType.cs" />
+    <Compile Include="CinookModelCode\XPOMediaType.Designer.cs">
+      <DependentUpon>XPOMediaType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CinookModelCode\XPOPlaylist.cs" />
+    <Compile Include="CinookModelCode\XPOPlaylist.Designer.cs">
+      <DependentUpon>XPOPlaylist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CinookModelCode\XPOPlaylistTrack.cs" />
+    <Compile Include="CinookModelCode\XPOPlaylistTrack.Designer.cs">
+      <DependentUpon>XPOPlaylistTrack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CinookModelCode\XPOTrack.cs" />
+    <Compile Include="CinookModelCode\XPOTrack.Designer.cs">
+      <DependentUpon>XPOTrack.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CinookModel.xpo" />
+    <None Include="CinookModel.xpo.diagram">
+      <DependentUpon>CinookModel.xpo</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

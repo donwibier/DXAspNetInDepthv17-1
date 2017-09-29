@@ -29,17 +29,13 @@
                 <div class="twelve columns">
                     <dx:ASPxMenu ID="ASPxMenu1" runat="server" EnableAdaptivity="True" ItemAutoWidth="False" ItemWrap="False" Width="100%">
                         <Items>
-                            <dx:MenuItem Text="Item A">
+                            <dx:MenuItem Text="Orders" NavigateUrl="~/">
                             </dx:MenuItem>
-                            <dx:MenuItem Text="Item B">
+                            <dx:MenuItem Text="Agenda" NavigateUrl="~/Agenda.aspx">
                             </dx:MenuItem>
-                            <dx:MenuItem Text="Item C">
+                            <dx:MenuItem Text="RichText" NavigateUrl="~/Richtext.aspx">
                             </dx:MenuItem>
-                            <dx:MenuItem Text="Item D">
-                            </dx:MenuItem>
-                            <dx:MenuItem Text="Item E">
-                            </dx:MenuItem>
-                            <dx:MenuItem Text="Item F">
+                            <dx:MenuItem Text="Calculating" NavigateUrl="~/Spreadsheet.aspx">
                             </dx:MenuItem>
                         </Items>
                     </dx:ASPxMenu>
