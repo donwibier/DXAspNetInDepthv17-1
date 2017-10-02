@@ -1,0 +1,14 @@
+﻿@model IEnumerable<DXMVC.ViewModels.InvoiceViewModel>
+
+@{
+	ViewBag.Title = "Orders";
+}
+
+<div class="row">
+	<div class="twelve columns">
+		<h4>@ViewBag.Title</h4>
+		<div>			
+			@Html.Action("GridPartial", Model)			
+		</div>
+	</div>
+</div>

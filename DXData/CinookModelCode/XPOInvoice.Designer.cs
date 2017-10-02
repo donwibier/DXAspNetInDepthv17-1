@@ -78,6 +78,11 @@ namespace DXData.Chinook
 			get { return _Total; }
 			set { SetPropertyValue<decimal>("Total", ref _Total, value); }
 		}
+		[PersistentAlias("[CustomerId.CustomerId]")]
+		public int CustomerKey
+		{
+			get { return (int)(EvaluateAlias("CustomerKey")); }
+		}
 		[Association(@"XPOInvoiceLineReferencesXPOInvoice")]
 		public XPCollection<XPOInvoiceLine> InvoiceLines { get { return GetCollection<XPOInvoiceLine>("InvoiceLines"); } }
 	}

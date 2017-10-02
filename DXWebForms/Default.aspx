@@ -19,7 +19,7 @@
 					<SettingsEditing Mode="PopupEditForm">
 					</SettingsEditing>
 					<Settings ShowFilterRow="True" />
-					<SettingsBehavior ConfirmDelete="True" />
+					<SettingsBehavior ConfirmDelete="True" AllowEllipsisInText="true" />
 					<SettingsPopup>
 						<EditForm HorizontalAlign="WindowCenter" Modal="True" VerticalAlign="WindowCenter" />
 					</SettingsPopup>
@@ -53,14 +53,19 @@
 						</Items>						
 					</EditFormLayoutProperties>
 					<Columns>
-						<dx:GridViewCommandColumn SelectAllCheckboxMode="Page" ShowClearFilterButton="True" ShowSelectCheckbox="True" VisibleIndex="0">
+						<dx:GridViewCommandColumn SelectAllCheckboxMode="Page" ShowClearFilterButton="True" ShowSelectCheckbox="True" 
+							VisibleIndex="0" >
 						</dx:GridViewCommandColumn>
-						<dx:GridViewCommandColumn ShowDeleteButton="True" ShowEditButton="True" ShowNewButtonInHeader="True" VisibleIndex="1">
+						<dx:GridViewCommandColumn ShowDeleteButton="True" ShowEditButton="True" ShowNewButtonInHeader="True" 
+							VisibleIndex="1" >
 						</dx:GridViewCommandColumn>
-						<dx:GridViewDataDateColumn FieldName="InvoiceDate" VisibleIndex="3">
+						<dx:GridViewDataDateColumn FieldName="InvoiceDate" 
+							VisibleIndex="3" >
 						</dx:GridViewDataDateColumn>
-						<dx:GridViewDataComboBoxColumn AllowTextTruncationInAdaptiveMode="True" Caption="Customer" FieldName="CustomerId!Key" VisibleIndex="4" AdaptivePriority="1">
-							<PropertiesComboBox DataSourceID="xpCustomer" TextField="Company" ValueField="CustomerId" TextFormatString="{1}, {2}" LoadDropDownOnDemand="True">
+						<dx:GridViewDataComboBoxColumn AllowTextTruncationInAdaptiveMode="True" Caption="Customer" 
+								FieldName="CustomerId!Key" VisibleIndex="4" AdaptivePriority="1">
+							<PropertiesComboBox DataSourceID="xpCustomer" TextField="Company" ValueField="CustomerId" 
+								TextFormatString="{1}, {2}" LoadDropDownOnDemand="True">
 								<Columns>
 									<dx:ListBoxColumn FieldName="Company">
 									</dx:ListBoxColumn>
@@ -71,15 +76,18 @@
 								</Columns>
 							</PropertiesComboBox>
 						</dx:GridViewDataComboBoxColumn>
-						<dx:GridViewDataTextColumn AllowTextTruncationInAdaptiveMode="True" FieldName="BillingAddress" VisibleIndex="5" AdaptivePriority="3">
+						<dx:GridViewDataTextColumn AllowTextTruncationInAdaptiveMode="True" FieldName="BillingAddress" 
+							VisibleIndex="5" AdaptivePriority="3">
 							<PropertiesTextEdit NullText="Address">
 							</PropertiesTextEdit>
 						</dx:GridViewDataTextColumn>
-						<dx:GridViewDataTextColumn AllowTextTruncationInAdaptiveMode="True" FieldName="BillingCity" VisibleIndex="6" AdaptivePriority="3">
+						<dx:GridViewDataTextColumn AllowTextTruncationInAdaptiveMode="True" FieldName="BillingCity" VisibleIndex="6" 
+							AdaptivePriority="3">
 							<PropertiesTextEdit NullText="City">
 							</PropertiesTextEdit>
 						</dx:GridViewDataTextColumn>
-						<dx:GridViewDataTextColumn AllowTextTruncationInAdaptiveMode="True" FieldName="BillingState" VisibleIndex="7" AdaptivePriority="3">
+						<dx:GridViewDataTextColumn AllowTextTruncationInAdaptiveMode="True" FieldName="BillingState" VisibleIndex="7" 
+							AdaptivePriority="3">
 							<PropertiesTextEdit NullText="State">
 							</PropertiesTextEdit>
 						</dx:GridViewDataTextColumn>

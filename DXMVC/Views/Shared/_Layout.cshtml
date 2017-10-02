@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>@ViewBag.Title</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="/content/normalize.css">
+	<link rel="stylesheet" href="/content/skeleton.css">
+	<link rel="icon" type="image/png" href="/content/favicon.png">
+
+    @Html.DevExpress().GetStyleSheets( 
+        new StyleSheet { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+        new StyleSheet { ExtensionSuite = ExtensionSuite.PivotGrid },
+        new StyleSheet { ExtensionSuite = ExtensionSuite.RichEdit },
+        new StyleSheet { ExtensionSuite = ExtensionSuite.Editors },
+        new StyleSheet { ExtensionSuite = ExtensionSuite.Scheduler },
+        new StyleSheet { ExtensionSuite = ExtensionSuite.GridView }
+    )
+    @Html.DevExpress().GetScripts( 
+        new Script { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+        new Script { ExtensionSuite = ExtensionSuite.PivotGrid },
+        new Script { ExtensionSuite = ExtensionSuite.RichEdit },
+        new Script { ExtensionSuite = ExtensionSuite.Editors },
+        new Script { ExtensionSuite = ExtensionSuite.Scheduler },
+        new Script { ExtensionSuite = ExtensionSuite.GridView }
+    )
+    
+</head>
+
+<body>    
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns">
+				<p><strong>My DX little sample App</strong></p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="twelve columns">
+				@Html.DevExpress().Menu(settings =>
+				   {
+					   settings.Name = "SiteMenu";
+					   settings.Width = Unit.Percentage(100);
+					   settings.ItemAutoWidth = false;
+					   settings.EnableAdaptivity = true;			   
+					   settings.AllowSelectItem = false;
+					   settings.Orientation = System.Web.UI.WebControls.Orientation.Horizontal;
+
+					   settings.Items.Add(a => { a.Text = "Orders"; a.NavigateUrl = "~/"; });
+					   settings.Items.Add(a => { a.Text = "Agenda"; a.NavigateUrl = "~/agenda"; });
+					   settings.Items.Add(a => { a.Text = "RichText"; a.NavigateUrl = "~/richtext"; });
+					   settings.Items.Add(a => { a.Text = "Calculating"; a.NavigateUrl = "~/spreadsheet"; });
+
+				   }).GetHtml()
+			</div>
+		</div>
+		@RenderBody()
+	</div>
+</body>
+</html>
