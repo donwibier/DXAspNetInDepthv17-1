@@ -1,0 +1,17 @@
+@Html.DevExpress().Spreadsheet(settings =>
+{
+	settings.Name = "Spreadsheet";
+	settings.CallbackRouteValues = new { Controller = "SpreadSheet", Action = "SpreadsheetPartial" };
+	settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+	settings.Height = 500;
+	settings.ReadOnly = false;
+	settings.WorkDirectory = "~/App_Data";
+	settings.RibbonMode = SpreadsheetRibbonMode.Ribbon;
+
+	settings.PreRender = (s, e) =>
+	{
+		MVCxSpreadsheet spreadsheet = s as MVCxSpreadsheet;
+		if (spreadsheet != null)
+			spreadsheet.WorksheetDisplayArea.SetSize(0, 6, 20);
+	};
+}).GetHtml()

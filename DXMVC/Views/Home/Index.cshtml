@@ -7,7 +7,24 @@
 <div class="row">
 	<div class="twelve columns">
 		<h4>@ViewBag.Title</h4>
-		<div>			
+		<div>						
+			<span class="show-me-the-hint">Show the hint</span>
+
+			@Html.DevExpress().Hint(settings =>
+{
+	settings.Name = "showHint";
+	settings.TargetSelector = ".show-me-the-hint";
+	settings.Content = "Here is the MVC hint";
+	settings.ShowCallout = true;
+	settings.Position = HintPosition.Top;
+}).GetHtml()
+
+			@Html.DevExpress().Hint(settings =>
+{
+	settings.Name = "gridHint";
+	settings.TargetSelector = ".dx-ellipses";
+}).GetHtml()
+
 			@Html.Action("GridPartial", Model)			
 		</div>
 	</div>

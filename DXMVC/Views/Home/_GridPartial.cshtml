@@ -8,13 +8,13 @@
 
 		settings.KeyFieldName = "InvoiceId";
 		settings.Width = Unit.Percentage(100);
+		
 		settings.SettingsPager.Visible = true;
 		settings.Settings.ShowGroupPanel = false;
-
+		
 		settings.Settings.ShowFilterRow = true;
 		settings.SettingsBehavior.ConfirmDelete = true;
 		settings.SettingsBehavior.AllowEllipsisInText = true;
-		settings.SettingsBehavior.AllowSelectByRowClick = true;
 
 		settings.SettingsEditing.Mode = GridViewEditingMode.PopupEditForm;
 		settings.SettingsPopup.EditForm.HorizontalAlign = PopupHorizontalAlign.WindowCenter;
@@ -24,11 +24,8 @@
 
 		settings.SettingsAdaptivity.AdaptivityMode = GridViewAdaptivityMode.HideDataCells;
 		settings.SettingsAdaptivity.AdaptiveColumnPosition = GridViewAdaptiveColumnPosition.Right;
-		settings.SettingsAdaptivity.AdaptiveDetailColumnCount = 1;
 		settings.SettingsAdaptivity.AllowOnlyOneAdaptiveDetailExpanded = true;
-		settings.SettingsAdaptivity.HideDataCellsAtWindowInnerWidth = 0;
 
-		settings.Columns.Add(new GridViewCommandColumn() { VisibleIndex = 0, Width=Unit.Pixel(50), ShowClearFilterButton = true, ShowSelectCheckbox = true, SelectAllCheckboxMode = GridViewSelectAllCheckBoxMode.Page });
 		settings.Columns.Add(new GridViewCommandColumn() { VisibleIndex = 1, ShowDeleteButton = true, ShowEditButton = true, ShowNewButtonInHeader = true });
 
 		var columnCustomer = new GridViewDataComboBoxColumn()
@@ -36,34 +33,31 @@
 			VisibleIndex = 4,
 			AllowTextTruncationInAdaptiveMode = true,
 			Caption = "Customer",
-			FieldName = "CustomerId",
-			AdaptivePriority = 1
+			FieldName = "CustomerId",			
 		};
 		var propsCust = columnCustomer.PropertiesComboBox;
 		propsCust.DataSource = ViewBag.LookupCustomers;
 		propsCust.TextField = "DisplayText";
 		propsCust.ValueField = "CustomerId";
 		propsCust.DisplayFormatString = "{1}, {2}";
-		//propsCust.LoadDropDownOnDemand = true;
-		//propsCust.Columns.Add("Company");
 		propsCust.Columns.Add("LastName");
 		propsCust.Columns.Add("FirstName");
 
 		settings.Columns.Add(columnCustomer);
 
+		settings.Columns.Add("InvoiceDate", MVCxGridViewColumnType.DateEdit);
+		settings.Columns.Add("BillingAddress");
+		settings.Columns.Add("BillingCity");
+		settings.Columns.Add("BillingState");
+		settings.Columns.Add("BillingCountry");
+		settings.Columns.Add("BillingPostalCode");
 
-		settings.Columns.Add(new GridViewDataDateColumn() { VisibleIndex = 5, FieldName = "InvoiceDate"});
-		settings.Columns.Add(a => { a.VisibleIndex = 6; a.AdaptivePriority = 3; a.FieldName = "BillingAddress"; });
-		settings.Columns.Add(a => { a.VisibleIndex = 7; a.AdaptivePriority = 3; a.FieldName = "BillingCity"; });
-		settings.Columns.Add(a => { a.VisibleIndex = 8; a.AdaptivePriority = 3; a.FieldName = "BillingState"; });
-		settings.Columns.Add(a => { a.VisibleIndex = 9; a.AdaptivePriority = 3; a.FieldName = "BillingCountry"; });
-		settings.Columns.Add(a => { a.VisibleIndex = 10; a.AdaptivePriority = 3; a.FieldName = "BillingPostalCode"; });
-
-		var columnTotal = new GridViewDataSpinEditColumn() { VisibleIndex = 11, FieldName = "Total" };
+		var columnTotal = new GridViewDataSpinEditColumn() { FieldName = "Total" };
 		columnTotal.PropertiesSpinEdit.DisplayFormatString = "{0:c}";
 		columnTotal.PropertiesSpinEdit.DecimalPlaces = 2;
 
 		settings.Columns.Add(columnTotal);
+		
 	});
 }
 @grid.Bind(Model).GetHtml()

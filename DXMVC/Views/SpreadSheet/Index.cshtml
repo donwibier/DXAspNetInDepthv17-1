@@ -1,0 +1,19 @@
+﻿
+@{
+	ViewBag.Title = "Calculating";
+}
+
+<div class="row">
+	<div class="twelve columns">
+		<h4>@ViewBag.Title</h4>
+		<div>
+
+			@using (Html.BeginForm())
+			{
+				@Html.Action("SpreadsheetPartial")
+			}
+
+
+		</div>
+	</div>
+</div>

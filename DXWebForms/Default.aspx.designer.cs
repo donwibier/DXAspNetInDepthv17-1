@@ -13,6 +13,24 @@ namespace DXWebForms {
     public partial class Default {
         
         /// <summary>
+        /// showMeHint control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxHint showMeHint;
+        
+        /// <summary>
+        /// gridHint control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxHint gridHint;
+        
+        /// <summary>
         /// xpInvoices control.
         /// </summary>
         /// <remarks>
